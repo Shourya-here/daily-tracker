@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daily Time Tracker</title>
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4f46e5">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>📅 Daily Subject Time Tracker</h1>
+</header>
+
+<main>
+  <!-- Add Subject -->
+  <section class="add-subject">
+    <input type="text" id="subjectInput" placeholder="Add subject..." />
+    <button id="addSubjectBtn">Add</button>
+  </section>
+
+  <!-- Subjects -->
+  <section id="subjectsContainer"></section>
+
+  <!-- Timer -->
+  <section class="timer">
+    <h2 id="activeSubject">No Active Subject</h2>
+    <div id="timerDisplay">00:00:00</div>
+
+    <div class="buttons">
+      <button id="startBtn">Start</button>
+      <button id="pauseBtn">Pause</button>
+      <button id="resumeBtn">Resume</button>
+    </div>
+  </section>
+
+  <!-- Calendar -->
+  <section class="calendar">
+    <h3>📆 Select Date</h3>
+    <input type="date" id="datePicker">
+    <div id="dateSummary"></div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js");
+  }
+</script>
+
+</body>
+</html>
